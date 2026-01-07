@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旋转镜像 + 数学破碎背景 + iframe</title>
+<style>
+body, html {
+  margin:0; padding:0;
+  width:100%; height:100%;
+  overflow:hidden;
+  background:#000;
+  font-family:sans-serif;
+}
+
+/* --- 数学破碎背景 --- */
+.math-broken-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #000;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.math-formulas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 300%; height: 300%;
+    opacity: 0.65;
+    z-index: 1;
+}
+
+.math-formula {
+    position: absolute;
+    color: rgba(255,0,0,0.7);
+    font-size: 24px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255,0,0,0.5);
+    animation: floatMath 20s infinite linear;
+}
+
+@keyframes floatMath {
+    0% { transform: translate(0,0) rotate(0deg); opacity:0.2; }
+    25% { transform: translate(30px,-20px) rotate(90deg); opacity:0.4; }
+    50% { transform: translate(-20px,30px) rotate(180deg); opacity:0.6; }
+    75% { transform: translate(40px,10px) rotate(270deg); opacity:0.4; }
+    100% { transform: translate(0,0) rotate(360deg); opacity:0.2; }
+}
+
+.broken-grid {
+    position: absolute;
+    top:0; left:0;
+    width:200%; height:200%;
+    background-image: linear-gradient(90deg, rgba(255,0,0,0.1) 1px, transparent 1px),
+                      linear-gradient(0deg, rgba(255,0,0,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-50px,-50px); }
+}
+
+.broken-squares {
+    position:absolute; top:0; left:0;
+    width:100%; height:100%;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,0,0,0.2) 2px, rgba(255,0,0,0.2) 4px),
+                      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,0,0,0.2) 2px, rgba(255,0,0,0.2) 4px);
+    background-size: 60px 60px;
+    animation: squaresFloat 15s ease-in-out infinite;
+    z-index: 3;
+}
+
+@keyframes squaresFloat {
+    0%, 100% { transform: translate(0,0) rotate(0deg); opacity:0.2; }
+    50% { transform: translate(10px,5px) rotate(0.5deg); opacity:0.4; }
+}
+
+/* --- 3D世界容器 --- */
+#scene-container {
+  width:100%; height:100%;
+  perspective:1500px;
+  perspective-origin: center bottom;
+  position: relative;
+  z-index: 10; 
+}
+
+#world-3d {
+  width:100%; height:200%;
+  transform-style: preserve-3d;
+  transform: translateZ(0) rotateZ(0deg) scale(1);
+  transition: transform 2.5s cubic-bezier(0.65,0,0.35,1);
+  position: relative;
+}
+
+.world-layer {
+  width:100%; height:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:3rem; color:#fff;
+}
+
+.world-current { background:#111; z-index:11; }
+.world-mirror { background:#444; }
+
+#mirror-iframe {
+    width:100%; height:100%;
+    transform: rotate(180deg);
+    border:none;
+    z-index:12;
+    pointer-events:none;
+}
+
+#flip-mask {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background: rgba(255,50,50,0);
+  z-index:50; pointer-events:none;
+  transition: background 2.5s cubic-bezier(0.65,0,0.35,1);
+}
+
+#flip-btn {
+  position:absolute; bottom:20px; left:50%; transform:translateX(-50%);
+  padding:10px 20px; font-size:1rem; cursor:pointer;
+  z-index:60;
+}
+</style>
+</head>
+<body>
+
+<!-- 数学破碎背景 -->
+<div class="math-broken-bg">
+    <div class="math-formulas" id="math-formulas"></div>
+    <div class="broken-grid"></div>
+    <div class="broken-squares"></div>
+</div>
+
+<!-- 3D旋转场景 -->
+<div id="scene-container">
+  <div id="world-3d">
+    <div class="world-layer world-current">现实世界</div>
+    <div class="world-layer world-mirror"><iframe id="mirror-iframe" src="image.html"></iframe></div>
+  </div>
+</div>
+
+<div id="flip-mask"></div>
+<button id="flip-btn">进入镜像世界</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // --- 初始化数学公式 ---
+    const mathFormulas = document.getElementById('math-formulas');
+    const mathSymbols = ["{","}","[","]","(",")","<",">","==","+","-","*","/","%","lambda","def","fn","var","let","const","if","else"];
+    const formulas = [];
+    const formulaCount = window.innerWidth < 768 ? 200 : 400;
+
+    for(let i=0;i<formulaCount;i++){
+        const f = document.createElement('div');
+        f.className='math-formula';
+        f.textContent=mathSymbols[Math.floor(Math.random()*mathSymbols.length)];
+        f.style.top = Math.random()*100+'%';
+        f.style.left = Math.random()*100+'%';
+        const size = 16 + Math.random()*24;
+        f.style.fontSize = size+'px';
+        const rotation = -30 + Math.random()*60;
+        f.style.transform=`rotate(${rotation}deg)`;
+        f.style.animationDelay = Math.random()*20+'s';
+        mathFormulas.appendChild(f);
+        formulas.push({el:f, x:f.offsetLeft, y:f.offsetTop, w:f.offsetWidth, h:f.offsetHeight, vx:(Math.random()*2+1)*(Math.random()<0.5?-1:1), vy:(Math.random()*2+1)*(Math.random()<0.5?-1:1), rotation});
+    }
+
+    // --- 背景动画 ---
+    function animateBg(){
+        const w=window.innerWidth, h=window.innerHeight;
+        formulas.forEach(f=>{
+            f.x+=f.vx; f.y+=f.vy;
+            if(f.x<=0||f.x+f.w>=w) f.vx*=-1;
+            if(f.y<=0||f.y+f.h>=h) f.vy*=-1;
+            f.rotation+=0.2;
+            f.el.style.left=f.x+'px';
+            f.el.style.top=f.y+'px';
+            f.el.style.transform=`rotate(${f.rotation}deg)`;
+        });
+        requestAnimationFrame(animateBg);
+    }
+    animateBg();
+});
+
+const world3d = document.getElementById('world-3d');
+const mirrorIframe = document.getElementById('mirror-iframe');
+const flipMask = document.getElementById('flip-mask');
+const flipBtn = document.getElementById('flip-btn');
+
+let isFlipping = false;
+
+flipBtn.addEventListener('click', () => {
+    if(isFlipping) return;
+    isFlipping = true;
+
+    // 让 iframe 在旋转途中可见
+    mirrorIframe.style.opacity = 1;
+
+    // 开始动画：旋转 180° + 放大 + 退后 + 遮罩
+    world3d.style.transform = 'translateZ(-2000px) translateY(-800px) rotateZ(180deg) scale(1.05)';
+    flipMask.style.background = 'rgba(255,50,50,0.2)';
+
+    // 动画结束后固定视角
+    setTimeout(()=>{
+        world3d.style.transform = 'translateZ(0) rotateZ(180deg) scale(1)';
+        flipMask.style.background = 'rgba(255,50,50,0)';
+        isFlipping=false;
+    }, 2500);
+
+    // 动画结束后正式跳转
+    setTimeout(()=> {
+        window.location.href = "image.html";
+    }, 5000);
+});
+</script>
+</body>
+</html>
