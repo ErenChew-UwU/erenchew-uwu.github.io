@@ -42,3 +42,106 @@
     padding:10px 20px; font-size:1rem; cursor:pointer;
     z-index:60;
 }
+#flip-btn {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 80px;
+    background: linear-gradient(180deg, #443B77 0%, #B5A8E0 100%);
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 40px 40px 0 0;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 -5px 20px rgba(68, 59, 119, 0.7);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+}
+
+/* 添加图标 */
+#flip-btn::before {
+    content: '▶';
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* 添加光泽效果 */
+#flip-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, #443B77, transparent);
+    border-radius: 40px 40px 0 0;
+}
+
+/* 悬停效果 */
+#flip-btn:hover {
+    height: 90px;
+    width: 320px;
+    font-size: 22px;
+    background: linear-gradient(180deg, #443B77 0%, #B5A8E0 100%);
+    box-shadow: 0 -8px 30px rgba(68, 59, 119, 0.7);
+}
+
+#flip-btn:hover::before {
+    transform: translateX(5px);
+}
+
+
+/* 脉冲动画效果 */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 -5px 20px rgba(68, 59, 119, 0.5);
+    }
+    50% {
+        box-shadow: 0 -5px 30px rgba(68, 59, 119, 0.8);
+    }
+    100% {
+        box-shadow: 0 -5px 20px rgba(68, 59, 119, 0.5);
+    }
+}
+
+#flip-btn {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #flip-btn {
+        width: 250px;
+        height: 70px;
+        font-size: 16px;
+        border-radius: 35px 35px 0 0;
+    }
+    
+    #flip-btn:hover {
+        width: 270px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    #flip-btn {
+        width: 200px;
+        height: 60px;
+        font-size: 14px;
+        border-radius: 30px 30px 0 0;
+    }
+    
+    #flip-btn:hover {
+        width: 220px;
+        height: 70px;
+    }
+}
