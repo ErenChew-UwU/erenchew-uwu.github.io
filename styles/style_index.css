@@ -15,6 +15,7 @@
 /* 主内容样式 */
 .main-content {
     padding: 30px;
+    margin-bottom: 60px;
     box-sizing: border-box;
     overflow-y: auto;
     height: 100%;
