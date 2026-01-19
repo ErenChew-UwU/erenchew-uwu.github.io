@@ -1,17 +1,3 @@
-.world-current { 
-    background: linear-gradient(135deg, hsl(287, 100%, 41%), hsl(279, 100%, 10%)); 
-    z-index: 11; 
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-.world-mirror { background:#444; }
-.main-content { 
-    width: 100%; 
-    height: 100%; 
-    background-color: transparent;
-}
-
 .app {
     display: flex;
     height: 75%;
@@ -86,7 +72,7 @@
         background: #000;
     }
     
-    .video-item:hover {
+    .video-item:hover, .video-item.active{
         transform: translateX(4px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
@@ -101,7 +87,7 @@
         z-index: 1;
     }
     
-    .video-item:hover .video-cover {
+    .video-item:hover .video-cover, .video-item.active .video-cover{
         transform: scale(1.05);
     }
     
@@ -122,7 +108,7 @@
         z-index: 2;
     }
     
-    .video-item:hover .video-info-overlay {
+    .video-item:hover .video-info-overlay, .video-item.active .video-info-overlay{
         transform: translateY(0);
     }
     
@@ -140,7 +126,7 @@
         z-index: 3;
     }
     
-    .video-item:hover .arrow {
+    .video-item:hover .arrow, .video-item.active .arrow{
         opacity: 1;
         transform: translateX(0);
     }
@@ -278,4 +264,148 @@ iframe, video {
 .video-item.active {
     outline: 6px solid #B5A8E0;
     outline-offset: -2px;
+}
+
+/* ====== TEXT VIEW 页面样式 ====== */
+.text-view {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: brightness(0.85);
+}
+
+/* 标题：大 */
+.text-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* 描述：小一点 + 灰色 */
+.text-desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* 正文：正常大小，可滚动，多行 */
+.text-body {
+    font-size: 18px;
+    line-height: 1.6;
+    max-height: 60%;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* 滚动条美化 */
+.text-body::-webkit-scrollbar {
+    width: 6px;
+}
+.text-body::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* ====== text-web 右下角按钮 ====== */
+.text-link-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 16px;
+    width: 200px;
+    height: 60px;
+    background: linear-gradient(180deg, #443B77 0%, #B5A8E0 100%);
+    color: #000;
+    font-size: 38px;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 -5px 20px rgba(68, 59, 119, 0.7);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 2;
+}
+
+.text-link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+/* 遮罩 */
+.text-view-overlay {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    pointer-events: none; /* 讓點擊穿透，不影響按鈕/滾動 */
+    z-index: 1;
+}
+
+.text-title, .text-desc, .text-body {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+
+    .viewer {
+        height: 100%;      /* 讓右側區域有實際高度 */
+        min-height: 0;     /* 允許內部元素滾動 */
+    }
+
+    .text-view {
+        height: 100%;
+        display: flex;            /* 🔹 關鍵 */
+        flex-direction: column;   /* 🔹 關鍵 */
+        padding: 20px;
+        background-position: center top;
+    }
+
+    .text-title {
+        font-size: 26px;        /* 手機標題縮小 */
+        line-height: 1.2;
+    }
+
+    .text-desc {
+        font-size: 14px;        /* 手機描述更小更輕 */
+        margin-bottom: 12px;
+    }
+
+    .text-body {
+        font-size: 16px;        /* 手機正文稍微小一點 */
+        line-height: 1.5;
+        max-height: none;       /* 限制高度，避免溢出 */
+        min-height: 0;
+        flex: 1;            /* 🔹 吃掉剩餘高度 */
+        min-height: 0;      /* 🔹 必須有，否則 iOS 不會滾動 */
+        overflow-y: auto;   /* 強制滾動 */
+        font-size: 16px;
+        line-height: 1.5;
+        padding-right: 8px;
+    }
+
+    /* 讓段落之間更好讀 */
+    .text-body p {
+        margin: 8px 0;
+    }
+
+    /* text-web 按鈕手機優化 */
+    .text-link-btn {
+        width: 80px;
+        height: 20px;
+        border-radius: 6px;
+        bottom: 16px;
+        right: 16px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }

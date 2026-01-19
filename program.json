@@ -1,0 +1,6 @@
+{
+    "content" : [
+        {"date": "20220317", "type": "text-only", "title": "Game Guide - The Battle Cats", "descripsion": ["17 March 2022","This is a line of descripsion"], "source": {"background": "assets/logo.png", "texts": ["This is a line of words.","This is a line of words."]}, "coverImg": "assets/logo.png"},
+        {"date": "20220317", "type": "text-web", "title": "Game Guide - The Battle Cats", "descripsion": ["17 March 2022","This is a line of descripsion"], "source": {"background": "assets/logo.png", "texts": ["This is a line of words.","This is a line of words.","This is a line of words.","This is a line of words.","This is a line of words.","This is a line of words.","This is a line of words.","This is a line of words.","This is a line of words.","This is a line of words."]}, "coverImg": "assets/logo.png", "location": "pages/uwu/index.html"}
+    ]
+}

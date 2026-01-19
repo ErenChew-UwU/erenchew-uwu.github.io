@@ -1,8 +1,8 @@
 {
     "content" : [
-        {"date": "20250409", "type": "youtube", "title": "INTEGRITY & ANTI-CORRUPTION - Say No To Corruption", "descripsion": ["9 April 2025","This is a line of descripsion"], "source": "y1tJ6sgsewU", "coverImg": ""},
-        {"date": "20250810", "type": "youtube", "title": "Community Service - TZU CHI Foundation", "descripsion": ["10 August 2025","This is a line of descripsion"], "source": "NnLH8M4kZxs", "coverImg": ""},
-        {"date": "20220106", "type": "youtube", "title": "Game Guide - The Battle Cats", "descripsion": ["6 January 2022","This is a line of descripsion"], "source": "l5ASJZMvml0", "coverImg": ""},
-        {"date": "20220317", "type": "youtube", "title": "Game Guide - The Battle Cats", "descripsion": ["17 March 2022","This is a line of descripsion"], "source": "Jw09Zp5JaS8", "coverImg": ""}
+        {"date": "20250409", "type": "video-youtube", "title": "INTEGRITY & ANTI-CORRUPTION - Say No To Corruption", "descripsion": ["9 April 2025","This is a line of descripsion"], "source": "y1tJ6sgsewU", "coverImg": ""},
+        {"date": "20250810", "type": "video-youtube", "title": "Community Service - TZU CHI Foundation", "descripsion": ["10 August 2025","This is a line of descripsion"], "source": "NnLH8M4kZxs", "coverImg": ""},
+        {"date": "20220106", "type": "video-youtube", "title": "Game Guide - The Battle Cats", "descripsion": ["6 January 2022","This is a line of descripsion"], "source": "l5ASJZMvml0", "coverImg": ""},
+        {"date": "20220317", "type": "video-youtube", "title": "Game Guide - The Battle Cats", "descripsion": ["17 March 2022","This is a line of descripsion"], "source": "Jw09Zp5JaS8", "coverImg": ""}
     ]
 }
