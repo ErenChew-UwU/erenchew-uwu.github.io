@@ -1,8 +1,9 @@
 {
     "content" : [
-        {"date": "20250409", "type": "video-youtube", "title": "INTEGRITY & ANTI-CORRUPTION - Say No To Corruption", "descripsion": ["9 April 2025","This is a line of descripsion"], "source": "y1tJ6sgsewU", "coverImg": ""},
-        {"date": "20250810", "type": "video-youtube", "title": "Community Service - TZU CHI Foundation", "descripsion": ["10 August 2025","This is a line of descripsion"], "source": "NnLH8M4kZxs", "coverImg": ""},
-        {"date": "20220106", "type": "video-youtube", "title": "Game Guide - The Battle Cats", "descripsion": ["6 January 2022","This is a line of descripsion"], "source": "l5ASJZMvml0", "coverImg": ""},
-        {"date": "20220317", "type": "video-youtube", "title": "Game Guide - The Battle Cats", "descripsion": ["17 March 2022","This is a line of descripsion"], "source": "Jw09Zp5JaS8", "coverImg": ""}
+        {"date": "20250409", "type": "video-youtube", "title": "INTEGRITY & ANTI-CORRUPTION - Say No To Corruption", "descripsion": ["9 April 2025","Work on Director & Editor"], "source": "y1tJ6sgsewU", "coverImg": ""},
+        {"date": "20250810", "type": "video-youtube", "title": "Community Service - TZU CHI Foundation", "descripsion": ["10 August 2025","Work on Director & Editor"], "source": "NnLH8M4kZxs", "coverImg": ""},
+        {"date": "20220106", "type": "video-youtube", "title": "Game Guide - The Battle Cats", "descripsion": ["6 January 2022","Prosonal Channel"], "source": "l5ASJZMvml0", "coverImg": ""},
+        {"date": "20220317", "type": "video-youtube", "title": "Game Guide - The Battle Cats", "descripsion": ["17 March 2022","Prosonal Channel"], "source": "Jw09Zp5JaS8", "coverImg": ""},
+        {"date": "20211017", "type": "text-web", "title": "Game Guide Channel - 白夜喵です~", "descripsion": ["Start on 17 October 2021","Prosonal Channel"], "source": {"background": "assets/background_channel-1.png", "texts": ["A Youtube Channel about the game guide of [The Battle Cats 猫咪大战争], for now already stop to continue update.","In about a year, I getting over 300 subscribers, 200k views, and 50 videos. The most popular video having around 50k views.","For editing video, I used [Capcut] edited over 100 videos even didn't upload on this channel. Used [Canva] for created the video cover for each"]}, "coverImg": "assets/icon_channel-1.png", "location": "https://www.youtube.com/@ShiroyaNeko"}
     ]
 }
