@@ -1,10 +1,10 @@
-﻿# Portfolio 2.0 Design System
+﻿# Portfolio Design System
 
-This document is the single source of truth for styling and UI decisions in Portfolio 2.0. Future components and page changes should reference these rules before adding new visual patterns.
+This document is the single source of truth for styling and UI decisions in Portfolio. Future components and page changes should reference these rules before adding new visual patterns.
 
 ## Brand Identity
 
-Portfolio 2.0 is a modern, anime/ACG-inspired personal portfolio with a slightly futuristic mood. The experience should feel immersive, glowing, and expressive while remaining clean, readable, and easy to navigate.
+Portfolio is a modern, anime/ACG-inspired personal portfolio with a slightly futuristic mood. The experience should feel immersive, glowing, and expressive while remaining clean, readable, and easy to navigate.
 
 ### Primary Gradient
 
