@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品网格 | Portfolio</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body data-page="works">
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="../index.html">Portfolio<small>Works</small></a>
+      <button class="menu-button" type="button" data-menu-button aria-expanded="false">MENU</button>
+      <div class="nav-links" data-nav-links>
+        <a href="../index.html" data-nav="home">首页</a>
+        <a href="about.html" data-nav="about">简介</a>
+        <a href="works.html" data-nav="works">作品</a>
+        <a href="projects.html" data-nav="projects">精选</a>
+        <a href="skills.html" data-nav="skills">技能</a>
+        <a href="contact.html" data-nav="contact">联系</a>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="page-hero">
+      <span class="eyebrow">WORKS</span>
+      <h1>作品网格</h1>
+      <p class="lede">所有作品的完整入口。现在先放占位项目，分类已经预留给网页开发、插画、游戏作品和未来摄影。</p>
+    </section>
+    <section class="section">
+      <div class="filter-row" aria-label="Work filters">
+        <button class="filter-button is-active" type="button" data-filter="all">全部</button>
+        <button class="filter-button" type="button" data-filter="web">网页</button>
+        <button class="filter-button" type="button" data-filter="illustration">插画</button>
+        <button class="filter-button" type="button" data-filter="game">游戏</button>
+        <button class="filter-button" type="button" data-filter="photo">摄影</button>
+      </div>
+      <div class="grid three">
+        <article class="work-card" data-work-card data-category="web"><div class="work-art"></div><div class="work-body"><h3>后台管理系统</h3><p>全栈项目占位：仪表盘、表单、权限、数据接口。</p><div class="tag-row"><span class="tag">Web</span><span class="tag">Full Stack</span></div></div></article>
+        <article class="work-card" data-work-card data-category="web"><div class="work-art" style="--art-a:#6de7ff;--art-b:#6331c6"></div><div class="work-body"><h3>互动网页实验</h3><p>前端动效和叙事页面占位。</p><div class="tag-row"><span class="tag">Frontend</span><span class="tag">Motion</span></div></div></article>
+        <article class="work-card" data-work-card data-category="illustration"><div class="work-art" style="--art-a:#ff8dcf;--art-b:#1b0549"></div><div class="work-body"><h3>角色设定集</h3><p>角色、服装、表情和背景设定占位。</p><div class="tag-row"><span class="tag">Illustration</span><span class="tag">Character</span></div></div></article>
+        <article class="work-card" data-work-card data-category="game"><div class="work-art" style="--art-a:#ffd36e;--art-b:#6331c6"></div><div class="work-body"><h3>小游戏原型</h3><p>玩法循环、关卡节奏、交互反馈占位。</p><div class="tag-row"><span class="tag">Game</span><span class="tag">Prototype</span></div></div></article>
+        <article class="work-card" data-work-card data-category="illustration"><div class="work-art" style="--art-a:#fff8ff;--art-b:#b95dff"></div><div class="work-body"><h3>视觉海报</h3><p>用于展示海报、KV 或单张完成稿。</p><div class="tag-row"><span class="tag">Poster</span><span class="tag">Visual</span></div></div></article>
+        <article class="work-card" data-work-card data-category="photo"><div class="work-art" style="--art-a:#8be9fd;--art-b:#1b0549"></div><div class="work-body"><h3>摄影作品预留</h3><p>后续可接入人像、街景、旅行或静物系列。</p><div class="tag-row"><span class="tag">Future</span><span class="tag">Photo</span></div></div></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><span>Portfolio</span><span><a href="projects.html">Projects</a></span></footer>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>
