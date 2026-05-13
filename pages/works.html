@@ -1,51 +1,45 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>作品网格 | Portfolio</title>
+  <title>Works | Portfolio 2.0</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body data-page="works">
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="../index.html">Portfolio<small>Works</small></a>
-      <button class="menu-button" type="button" data-menu-button aria-expanded="false">MENU</button>
+      <a class="brand" href="../index.html"><span data-i18n="brand.title">Portfolio 2.0</span><small data-i18n="brand.subtitle">Web / Illustration / Games</small></a>
+      <div class="nav-actions"><button class="lang-toggle" type="button" data-language-toggle data-i18n="nav.lang">中文</button><button class="menu-button" type="button" data-menu-button aria-expanded="false" data-i18n="nav.menu">Menu</button></div>
       <div class="nav-links" data-nav-links>
-        <a href="../index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">简介</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="projects.html" data-nav="projects">精选</a>
-        <a href="skills.html" data-nav="skills">技能</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+        <a href="../index.html" data-nav="home" data-i18n="nav.home">Home</a><a href="about.html" data-nav="about" data-i18n="nav.about">Profile</a>
+        <div class="nav-item"><button class="nav-link-button" type="button" data-dropdown-toggle aria-expanded="false"><span data-i18n="nav.works">Works</span><span class="nav-arrow">▼</span></button><div class="dropdown"><a href="works.html" data-nav="works" data-i18n="nav.allWorks">All Works</a><a href="games.html" data-i18n="nav.games">Games</a><a href="tools.html" data-i18n="nav.tools">Tools</a><a href="illustrations.html" data-i18n="nav.illustrations">Illustrations</a><a href="websites.html" data-i18n="nav.websites">Websites</a><a href="photography.html" data-i18n="nav.photography">Photography</a></div></div>
+        <a href="projects.html" data-nav="projects" data-i18n="nav.projects">Featured</a><a href="skills.html" data-nav="skills" data-i18n="nav.skills">Skills</a><a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a>
       </div>
     </nav>
   </header>
   <main class="main">
-    <section class="page-hero">
-      <span class="eyebrow">WORKS</span>
-      <h1>作品网格</h1>
-      <p class="lede">所有作品的完整入口。现在先放占位项目，分类已经预留给网页开发、插画、游戏作品和未来摄影。</p>
-    </section>
+    <section class="page-hero"><span class="eyebrow" data-i18n="label.works">Works</span><h1 data-i18n="works.title">Works Grid</h1><p class="lede" data-i18n="works.body">The complete entry point for all works. Categories are ready for websites, tools, illustrations, games, and photography.</p></section>
     <section class="section">
       <div class="filter-row" aria-label="Work filters">
-        <button class="filter-button is-active" type="button" data-filter="all">全部</button>
-        <button class="filter-button" type="button" data-filter="web">网页</button>
-        <button class="filter-button" type="button" data-filter="illustration">插画</button>
-        <button class="filter-button" type="button" data-filter="game">游戏</button>
-        <button class="filter-button" type="button" data-filter="photo">摄影</button>
+        <button class="filter-button is-active" type="button" data-filter="all" data-i18n="filter.all">All</button>
+        <button class="filter-button" type="button" data-filter="websites" data-i18n="filter.websites">Websites</button>
+        <button class="filter-button" type="button" data-filter="tools" data-i18n="filter.tools">Tools</button>
+        <button class="filter-button" type="button" data-filter="illustrations" data-i18n="filter.illustrations">Illustrations</button>
+        <button class="filter-button" type="button" data-filter="games" data-i18n="filter.games">Games</button>
+        <button class="filter-button" type="button" data-filter="photography" data-i18n="filter.photography">Photography</button>
       </div>
       <div class="grid three">
-        <article class="work-card" data-work-card data-category="web"><div class="work-art"></div><div class="work-body"><h3>后台管理系统</h3><p>全栈项目占位：仪表盘、表单、权限、数据接口。</p><div class="tag-row"><span class="tag">Web</span><span class="tag">Full Stack</span></div></div></article>
-        <article class="work-card" data-work-card data-category="web"><div class="work-art" style="--art-a:#6de7ff;--art-b:#6331c6"></div><div class="work-body"><h3>互动网页实验</h3><p>前端动效和叙事页面占位。</p><div class="tag-row"><span class="tag">Frontend</span><span class="tag">Motion</span></div></div></article>
-        <article class="work-card" data-work-card data-category="illustration"><div class="work-art" style="--art-a:#ff8dcf;--art-b:#1b0549"></div><div class="work-body"><h3>角色设定集</h3><p>角色、服装、表情和背景设定占位。</p><div class="tag-row"><span class="tag">Illustration</span><span class="tag">Character</span></div></div></article>
-        <article class="work-card" data-work-card data-category="game"><div class="work-art" style="--art-a:#ffd36e;--art-b:#6331c6"></div><div class="work-body"><h3>小游戏原型</h3><p>玩法循环、关卡节奏、交互反馈占位。</p><div class="tag-row"><span class="tag">Game</span><span class="tag">Prototype</span></div></div></article>
-        <article class="work-card" data-work-card data-category="illustration"><div class="work-art" style="--art-a:#fff8ff;--art-b:#b95dff"></div><div class="work-body"><h3>视觉海报</h3><p>用于展示海报、KV 或单张完成稿。</p><div class="tag-row"><span class="tag">Poster</span><span class="tag">Visual</span></div></div></article>
-        <article class="work-card" data-work-card data-category="photo"><div class="work-art" style="--art-a:#8be9fd;--art-b:#1b0549"></div><div class="work-body"><h3>摄影作品预留</h3><p>后续可接入人像、街景、旅行或静物系列。</p><div class="tag-row"><span class="tag">Future</span><span class="tag">Photo</span></div></div></article>
+        <article class="work-card" data-work-card data-category="websites"><div class="work-art"></div><div class="work-body"><h3 data-i18n="work.fullstack.title">Full-stack Web Project</h3><p data-i18n="cat.websites.body">Showcase and demo-only website previews.</p><div class="tag-row"><span class="tag">Websites</span><span class="tag">Demo</span></div></div></article>
+        <article class="work-card" data-work-card data-category="tools"><div class="work-art" style="--art-a:#6de7ff;--art-b:#6331c6"></div><div class="work-body"><h3 data-i18n="cat.tools">Tools</h3><p data-i18n="cat.tools.body">Browser-based utilities hosted from the tools directory.</p><div class="tag-row"><span class="tag">Tools</span><span class="tag">GitHub Pages</span></div></div></article>
+        <article class="work-card" data-work-card data-category="illustrations"><div class="work-art" style="--art-a:#ff8dcf;--art-b:#1b0549"></div><div class="work-body"><h3 data-i18n="work.character.title">Character Design Set</h3><p data-i18n="work.character.body">Placeholder for characters, outfits, expressions, and background concepts.</p><div class="tag-row"><span class="tag">Illustration</span><span class="tag">Character</span></div></div></article>
+        <article class="work-card" data-work-card data-category="games"><div class="work-art" style="--art-a:#ffd36e;--art-b:#6331c6"></div><div class="work-body"><h3 data-i18n="work.prototype.title">Game Prototype</h3><p data-i18n="work.prototype.body">Placeholder for core loops, level pacing, and interaction feedback.</p><div class="tag-row"><span class="tag">Game</span><span class="tag">Prototype</span></div></div></article>
+        <article class="work-card" data-work-card data-category="illustrations"><div class="work-art" style="--art-a:#fff8ff;--art-b:#b95dff"></div><div class="work-body"><h3 data-i18n="work.poster.title">Visual Poster</h3><p data-i18n="work.poster.body">Placeholder for posters, key visuals, and finished single images.</p><div class="tag-row"><span class="tag">Poster</span><span class="tag">Visual</span></div></div></article>
+        <article class="work-card" data-work-card data-category="photography"><div class="work-art" style="--art-a:#8be9fd;--art-b:#1b0549"></div><div class="work-body"><h3 data-i18n="work.photo.title">Photography Reserve</h3><p data-i18n="work.photo.body">Reserved for portraits, street scenes, travel, or still-life series.</p><div class="tag-row"><span class="tag">Future</span><span class="tag">Photo</span></div></div></article>
       </div>
     </section>
   </main>
-  <footer class="footer"><span>Portfolio</span><span><a href="projects.html">Projects</a></span></footer>
+  <footer class="footer"><span data-i18n="brand.title">Portfolio 2.0</span><span><a href="projects.html" data-i18n="nav.projects">Featured</a></span></footer>
   <script src="../assets/js/site.js"></script>
 </body>
 </html>

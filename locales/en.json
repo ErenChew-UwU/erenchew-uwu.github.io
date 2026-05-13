@@ -1,0 +1,19 @@
+﻿{
+  "brand.title": "Portfolio 2.0",
+  "brand.subtitle": "Web / Illustration / Games",
+  "nav.home": "Home",
+  "nav.about": "Profile",
+  "nav.works": "Works",
+  "nav.projects": "Featured",
+  "nav.skills": "Skills",
+  "nav.contact": "Contact",
+  "nav.menu": "Menu",
+  "nav.lang": "中文",
+  "nav.allWorks": "All Works",
+  "nav.games": "Games",
+  "nav.tools": "Tools",
+  "nav.illustrations": "Illustrations",
+  "nav.websites": "Websites",
+  "nav.photography": "Photography",
+  "note": "Runtime translations are mirrored in assets/js/site.js so the site still works when opened directly from file://. Keep these locale files synchronized when editing copy."
+}

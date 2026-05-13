@@ -1,0 +1,19 @@
+﻿{
+  "brand.title": "Portfolio 2.0",
+  "brand.subtitle": "网页 / 插画 / 游戏",
+  "nav.home": "首页",
+  "nav.about": "简介",
+  "nav.works": "作品",
+  "nav.projects": "精选",
+  "nav.skills": "技能",
+  "nav.contact": "联系",
+  "nav.menu": "菜单",
+  "nav.lang": "EN",
+  "nav.allWorks": "全部作品",
+  "nav.games": "游戏作品",
+  "nav.tools": "工具",
+  "nav.illustrations": "插画",
+  "nav.websites": "网站展示",
+  "nav.photography": "摄影",
+  "note": "运行时翻译镜像保存在 assets/js/site.js，保证直接通过 file:// 打开时仍能切换语言。修改文案时请同步这些 locale 文件。"
+}

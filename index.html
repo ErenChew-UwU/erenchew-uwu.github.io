@@ -1,27 +1,39 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Personal Works</title>
+  <title>Portfolio 2.0</title>
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body data-page="home">
   <div class="site-shell">
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="index.html">
-          Portfolio
-          <small>Web / Illustration / Games</small>
-        </a>
-        <button class="menu-button" type="button" data-menu-button aria-expanded="false">MENU</button>
+        <a class="brand" href="index.html"><span data-i18n="brand.title">Portfolio 2.0</span><small data-i18n="brand.subtitle">Web / Illustration / Games</small></a>
+        <div class="nav-actions">
+          <button class="lang-toggle" type="button" data-language-toggle data-i18n="nav.lang">中文</button>
+          <button class="menu-button" type="button" data-menu-button aria-expanded="false" data-i18n="nav.menu">Menu</button>
+        </div>
         <div class="nav-links" data-nav-links>
-          <a href="index.html" data-nav="home">首页</a>
-          <a href="pages/about.html" data-nav="about">简介</a>
-          <a href="pages/works.html" data-nav="works">作品</a>
-          <a href="pages/projects.html" data-nav="projects">精选</a>
-          <a href="pages/skills.html" data-nav="skills">技能</a>
-          <a href="pages/contact.html" data-nav="contact">联系</a>
+          <a href="index.html" data-nav="home" data-i18n="nav.home">Home</a>
+          <a href="pages/about.html" data-nav="about" data-i18n="nav.about">Profile</a>
+          <div class="nav-item">
+            <button class="nav-link-button" type="button" data-dropdown-toggle aria-expanded="false">
+              <span data-i18n="nav.works">Works</span><span class="nav-arrow">▼</span>
+            </button>
+            <div class="dropdown">
+              <a href="pages/works.html" data-nav="works" data-i18n="nav.allWorks">All Works</a>
+              <a href="pages/games.html" data-i18n="nav.games">Games</a>
+              <a href="pages/tools.html" data-i18n="nav.tools">Tools</a>
+              <a href="pages/illustrations.html" data-i18n="nav.illustrations">Illustrations</a>
+              <a href="pages/websites.html" data-i18n="nav.websites">Websites</a>
+              <a href="pages/photography.html" data-i18n="nav.photography">Photography</a>
+            </div>
+          </div>
+          <a href="pages/projects.html" data-nav="projects" data-i18n="nav.projects">Featured</a>
+          <a href="pages/skills.html" data-nav="skills" data-i18n="nav.skills">Skills</a>
+          <a href="pages/contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a>
         </div>
       </nav>
     </header>
@@ -29,128 +41,84 @@
     <main class="main">
       <section class="hero">
         <div>
-          <span class="eyebrow">Creative Portfolio</span>
-          <h1>把网页、插画和游戏做成一个持续生长的世界。</h1>
-          <p class="hero-copy">这里是个人作品展示的第二版。当前先用占位内容建立结构，之后可以替换成真实项目、追加摄影分类、扩展每个作品的完整详情页。</p>
+          <span class="eyebrow" data-i18n="label.portfolio">Creative Portfolio</span>
+          <h1 data-i18n="home.hero.title">A growing world for websites, illustration, and games.</h1>
+          <p class="hero-copy" data-i18n="home.hero.copy">This is the second version of a personal portfolio. Placeholder content sets the structure now, while real projects, photography, and richer case studies can be added later.</p>
           <div class="hero-actions">
-            <a class="pill-link" href="pages/works.html">查看作品</a>
-            <a class="ghost-button" href="pages/projects.html">精选项目</a>
+            <a class="pill-link" href="pages/works.html" data-i18n="home.hero.primary">View Works</a>
+            <a class="ghost-button" href="pages/projects.html" data-i18n="home.hero.secondary">Featured Projects</a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="poster">
-            <div class="poster-title">作品展示</div>
+            <div class="poster-title" data-i18n="home.poster.title">Portfolio</div>
             <div class="poster-meta">
-              <span>Version</span>
-              <span>Future Ready</span>
+              <span data-i18n="home.poster.meta1">Version 2.0</span>
+              <span data-i18n="home.poster.meta2">Future Ready</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="about">
+      <section class="section">
         <div class="section-head">
-          <div>
-            <div class="section-kana">PROFILE</div>
-            <h2 class="section-title">个人简介</h2>
-          </div>
-          <a class="ghost-button" href="pages/about.html">完整简介</a>
+          <div><div class="section-kana" data-i18n="label.profile">Profile</div><h2 class="section-title" data-i18n="home.about.title">Profile</h2></div>
+          <a class="ghost-button" href="pages/about.html" data-i18n="home.about.cta">Full Profile</a>
         </div>
         <div class="split">
-          <div class="feature">
-            <strong>创作方向</strong>
-            <p>以前后端网页开发为基础，同时保留插画、游戏作品、未来摄影作品的展示空间。整体内容可以从精简简介逐步扩展成完整的个人创作档案。</p>
-          </div>
-          <div class="feature">
-            <strong>站点气质</strong>
-            <p>日系动画官网感、强对比渐变、轻微舞台感和清晰分区。主视觉使用 #b95dff 到 #1b0549 的深紫渐变，并加入亮色点缀保持活力。</p>
-          </div>
+          <div class="feature"><strong data-i18n="home.about.card1.title">Creative Direction</strong><p data-i18n="home.about.card1.body">The portfolio centers on full-stack web development, while keeping space for illustration, games, and future photography collections.</p></div>
+          <div class="feature"><strong data-i18n="home.about.card2.title">Visual Mood</strong><p data-i18n="home.about.card2.body">Anime-site energy, strong purple gradients, clean sections, glowing accents, and a readable presentation rhythm.</p></div>
         </div>
       </section>
 
-      <section class="section" id="works">
+      <section class="section">
         <div class="section-head">
-          <div>
-            <div class="section-kana">WORKS</div>
-            <h2 class="section-title">作品网格</h2>
-          </div>
-          <a class="ghost-button" href="pages/works.html">全部作品</a>
+          <div><div class="section-kana" data-i18n="label.works">Works</div><h2 class="section-title" data-i18n="home.works.title">Works Grid</h2></div>
+          <a class="ghost-button" href="pages/works.html" data-i18n="home.works.cta">All Works</a>
         </div>
         <div class="category-strip">
-          <a class="category-link" href="pages/web.html"><span>01</span><strong>网页开发</strong></a>
-          <a class="category-link" href="pages/illustration.html"><span>02</span><strong>插画</strong></a>
-          <a class="category-link" href="pages/games.html"><span>03</span><strong>游戏作品</strong></a>
-          <a class="category-link" href="pages/photography.html"><span>04</span><strong>摄影预留</strong></a>
+          <a class="category-link" href="pages/websites.html"><span>01</span><strong data-i18n="cat.websites">Websites</strong></a>
+          <a class="category-link" href="pages/tools.html"><span>02</span><strong data-i18n="cat.tools">Tools</strong></a>
+          <a class="category-link" href="pages/illustrations.html"><span>03</span><strong data-i18n="cat.illustrations">Illustrations</strong></a>
+          <a class="category-link" href="pages/games.html"><span>04</span><strong data-i18n="cat.games">Games</strong></a>
+          <a class="category-link" href="pages/photography.html"><span>05</span><strong data-i18n="cat.photography">Photography</strong></a>
         </div>
       </section>
 
-      <section class="section" id="featured">
+      <section class="section">
         <div class="section-head">
-          <div>
-            <div class="section-kana">PICK UP</div>
-            <h2 class="section-title">精选项目</h2>
-          </div>
-          <a class="ghost-button" href="pages/projects.html">项目详情</a>
+          <div><div class="section-kana" data-i18n="label.pickup">Pick Up</div><h2 class="section-title" data-i18n="home.featured.title">Featured Projects</h2></div>
+          <a class="ghost-button" href="pages/projects.html" data-i18n="home.featured.cta">Project Details</a>
         </div>
         <div class="grid three">
-          <article class="work-card">
-            <div class="work-art" style="--art-a:#b95dff;--art-b:#1b0549"></div>
-            <div class="work-body">
-              <h3>全栈网页项目占位</h3>
-              <p>用于展示需求分析、前端界面、后端接口和部署结果。</p>
-              <div class="tag-row"><span class="tag">Frontend</span><span class="tag">Backend</span></div>
-            </div>
-          </article>
-          <article class="work-card">
-            <div class="work-art" style="--art-a:#ff8dcf;--art-b:#6331c6"></div>
-            <div class="work-body">
-              <h3>插画系列占位</h3>
-              <p>用于展示角色设定、世界观草图、完成稿与过程记录。</p>
-              <div class="tag-row"><span class="tag">Character</span><span class="tag">Visual</span></div>
-            </div>
-          </article>
-          <article class="work-card">
-            <div class="work-art" style="--art-a:#6de7ff;--art-b:#1b0549"></div>
-            <div class="work-body">
-              <h3>互动游戏占位</h3>
-              <p>用于展示玩法原型、关卡设计、交互逻辑和试玩链接。</p>
-              <div class="tag-row"><span class="tag">Game</span><span class="tag">Prototype</span></div>
-            </div>
-          </article>
+          <article class="work-card"><div class="work-art"></div><div class="work-body"><h3 data-i18n="work.fullstack.title">Full-stack Web Project</h3><p data-i18n="work.fullstack.body">A placeholder for requirements, frontend screens, backend APIs, and deployment notes.</p><div class="tag-row"><span class="tag">Frontend</span><span class="tag">Backend</span></div></div></article>
+          <article class="work-card"><div class="work-art" style="--art-a:#ff8dcf;--art-b:#6331c6"></div><div class="work-body"><h3 data-i18n="work.illustration.title">Illustration Series</h3><p data-i18n="work.illustration.body">A placeholder for character design, world sketches, finished pieces, and process logs.</p><div class="tag-row"><span class="tag">Character</span><span class="tag">Visual</span></div></div></article>
+          <article class="work-card"><div class="work-art" style="--art-a:#6de7ff;--art-b:#1b0549"></div><div class="work-body"><h3 data-i18n="work.game.title">Interactive Game</h3><p data-i18n="work.game.body">A placeholder for gameplay prototypes, level design, logic, and playable links.</p><div class="tag-row"><span class="tag">Game</span><span class="tag">Prototype</span></div></div></article>
         </div>
       </section>
 
-      <section class="section" id="skills">
+      <section class="section">
         <div class="section-head">
-          <div>
-            <div class="section-kana">SKILLS</div>
-            <h2 class="section-title">技能</h2>
-          </div>
-          <a class="ghost-button" href="pages/skills.html">技能详情</a>
+          <div><div class="section-kana" data-i18n="label.skills">Skills</div><h2 class="section-title" data-i18n="home.skills.title">Skills</h2></div>
+          <a class="ghost-button" href="pages/skills.html" data-i18n="home.skills.cta">Skill Details</a>
         </div>
         <div class="grid three">
-          <div class="skill-card"><h3>前端</h3><p>HTML、CSS、JavaScript、响应式界面、交互动效。</p></div>
-          <div class="skill-card"><h3>后端</h3><p>接口设计、数据结构、用户流程、部署与维护。</p></div>
-          <div class="skill-card"><h3>创作</h3><p>插画、视觉叙事、游戏原型，未来可扩展摄影。</p></div>
+          <div class="skill-card"><h3 data-i18n="skills.frontend">Frontend Development</h3><p data-i18n="skills.frontend.body">HTML5, CSS3, JavaScript, responsive layouts, motion, and component-like page structure.</p></div>
+          <div class="skill-card"><h3 data-i18n="skills.backend">Backend Development</h3><p data-i18n="skills.backend.body">REST APIs, data modeling, permission flows, deployment, and maintenance.</p></div>
+          <div class="skill-card"><h3 data-i18n="skills.design">Design & Illustration</h3><p data-i18n="skills.design.body">Character design, composition, color, visual storytelling, and portfolio layout.</p></div>
         </div>
       </section>
 
-      <section class="section" id="social">
+      <section class="section">
         <div class="section-head">
-          <div>
-            <div class="section-kana">SOCIAL</div>
-            <h2 class="section-title">社交链接</h2>
-          </div>
-          <a class="pill-link" href="pages/contact.html">联系我</a>
+          <div><div class="section-kana" data-i18n="label.social">Social</div><h2 class="section-title" data-i18n="home.social.title">Social Links</h2></div>
+          <a class="pill-link" href="pages/contact.html" data-i18n="home.social.cta">Contact Me</a>
         </div>
-        <p class="lede">这里先预留 GitHub、作品平台、社交媒体和邮箱入口。等你决定公开哪些链接后，直接替换占位地址即可。</p>
+        <p class="lede" data-i18n="home.social.body">Reserved space for GitHub, creative platforms, social media, and email links.</p>
       </section>
     </main>
 
-    <footer class="footer">
-      <span>Portfolio</span>
-      <span>Designed for expansion</span>
-    </footer>
+    <footer class="footer"><span data-i18n="brand.title">Portfolio 2.0</span><span data-i18n="footer.designed">Designed for expansion</span></footer>
   </div>
   <script src="assets/js/site.js"></script>
 </body>

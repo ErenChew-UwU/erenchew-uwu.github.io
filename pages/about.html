@@ -1,46 +1,36 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>个人简介 | Portfolio</title>
+  <title>Profile | Portfolio 2.0</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body data-page="about">
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="../index.html">Portfolio<small>Profile</small></a>
-      <button class="menu-button" type="button" data-menu-button aria-expanded="false">MENU</button>
+      <a class="brand" href="../index.html"><span data-i18n="brand.title">Portfolio 2.0</span><small data-i18n="brand.subtitle">Web / Illustration / Games</small></a>
+      <div class="nav-actions"><button class="lang-toggle" type="button" data-language-toggle data-i18n="nav.lang">中文</button><button class="menu-button" type="button" data-menu-button aria-expanded="false" data-i18n="nav.menu">Menu</button></div>
       <div class="nav-links" data-nav-links>
-        <a href="../index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">简介</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="projects.html" data-nav="projects">精选</a>
-        <a href="skills.html" data-nav="skills">技能</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+        <a href="../index.html" data-nav="home" data-i18n="nav.home">Home</a>
+        <a href="about.html" data-nav="about" data-i18n="nav.about">Profile</a>
+        <div class="nav-item"><button class="nav-link-button" type="button" data-dropdown-toggle aria-expanded="false"><span data-i18n="nav.works">Works</span><span class="nav-arrow">▼</span></button><div class="dropdown"><a href="works.html" data-nav="works" data-i18n="nav.allWorks">All Works</a><a href="games.html" data-i18n="nav.games">Games</a><a href="tools.html" data-i18n="nav.tools">Tools</a><a href="illustrations.html" data-i18n="nav.illustrations">Illustrations</a><a href="websites.html" data-i18n="nav.websites">Websites</a><a href="photography.html" data-i18n="nav.photography">Photography</a></div></div>
+        <a href="projects.html" data-nav="projects" data-i18n="nav.projects">Featured</a>
+        <a href="skills.html" data-nav="skills" data-i18n="nav.skills">Skills</a>
+        <a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a>
       </div>
     </nav>
   </header>
   <main class="main">
-    <section class="page-hero">
-      <span class="eyebrow">PROFILE</span>
-      <h1>关于我</h1>
-      <p class="lede">这里可以写你的创作身份、学习或工作背景、正在探索的方向，以及你希望别人通过作品集记住你的关键词。</p>
-    </section>
+    <section class="page-hero"><span class="eyebrow" data-i18n="label.profile">Profile</span><h1 data-i18n="about.title">About Me</h1><p class="lede" data-i18n="about.body">Write your creative identity, background, current direction, and the keywords you want visitors to remember.</p></section>
     <section class="section">
       <div class="split">
-        <div class="detail-panel">
-          <h3>创作定位</h3>
-          <p>以前后端网页开发为核心，兼顾插画和游戏作品。站点结构支持继续加入摄影、视频、音乐或其他创作板块。</p>
-        </div>
-        <div class="detail-panel">
-          <h3>个人叙事占位</h3>
-          <p>可以补充你的创作理念、偏好的题材、项目经历、使用工具、学习路径，或者一句更像个人宣言的介绍。</p>
-        </div>
+        <div class="detail-panel"><h3 data-i18n="about.position.title">Creative Positioning</h3><p data-i18n="about.position.body">Web development is the core, with illustration and game works as parallel creative branches. The structure can keep expanding into photography, video, music, or other media.</p></div>
+        <div class="detail-panel"><h3 data-i18n="about.story.title">Personal Story Placeholder</h3><p data-i18n="about.story.body">Add your creative values, favorite themes, project experience, tools, learning path, or a stronger personal statement.</p></div>
       </div>
     </section>
   </main>
-  <footer class="footer"><span>Portfolio 2.0</span><span><a href="contact.html">Contact</a></span></footer>
+  <footer class="footer"><span data-i18n="brand.title">Portfolio 2.0</span><span><a href="contact.html" data-i18n="footer.contact">Contact</a></span></footer>
   <script src="../assets/js/site.js"></script>
 </body>
 </html>
