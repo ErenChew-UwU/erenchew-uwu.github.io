@@ -1,5 +1,5 @@
-{
-  "brand.title": "Portfolio",
+﻿{
+  "brand.title": "Portfolio ",
   "brand.subtitle": "网页 / 插画 / 游戏",
   "nav.home": "首页",
   "nav.about": "简介",
@@ -33,7 +33,7 @@
   "home.hero.primary": "查看作品",
   "home.hero.secondary": "精选项目",
   "home.poster.title": "作品展示",
-  "home.poster.meta1": "Version 2.0",
+  "home.poster.meta1": "Version",
   "home.poster.meta2": "Future Ready",
   "home.about.title": "个人简介",
   "home.about.cta": "完整简介",
@@ -136,7 +136,7 @@
   "page.photography.title": "摄影板块预留",
   "page.photography.body": "这个页面暂时作为扩展空间。后续可加入人像、城市、旅行、静物等摄影系列。",
   "category.back": "返回作品网格",
-  "footer.designed": "Designed for expansion",
+  "footer.designed": "Updated on May 14, 2026",
   "footer.home": "Home",
   "footer.contact": "Contact",
   "footer.allWorks": "All Works"

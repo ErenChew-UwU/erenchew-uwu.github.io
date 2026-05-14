@@ -1,5 +1,5 @@
-{
-  "brand.title": "Portfolio",
+﻿{
+  "brand.title": "Portfolio ",
   "brand.subtitle": "Web / Illustration / Games",
   "nav.home": "Home",
   "nav.about": "Profile",
@@ -33,7 +33,7 @@
   "home.hero.primary": "View Works",
   "home.hero.secondary": "Featured Projects",
   "home.poster.title": "Portfolio",
-  "home.poster.meta1": "Version 2.0",
+  "home.poster.meta1": "Version",
   "home.poster.meta2": "Future Ready",
   "home.about.title": "Profile",
   "home.about.cta": "Full Profile",
@@ -136,7 +136,7 @@
   "page.photography.title": "Photography Reserve",
   "page.photography.body": "A reserved expansion space for portraits, city scenes, travel, and still-life series.",
   "category.back": "Back to Works Grid",
-  "footer.designed": "Designed for expansion",
+  "footer.designed": "Updated on May 14, 2026",
   "footer.home": "Home",
   "footer.contact": "Contact",
   "footer.allWorks": "All Works"
