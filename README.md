@@ -10,7 +10,7 @@ Independent static multi-page portfolio built in `version_2.0`.
 - `pages/projects.html` - featured project details.
 - `pages/skills.html` - full skills page.
 - `pages/contact.html` - social and contact links.
-- `pages/websites.html`, `pages/tools.html`, `pages/illustrations.html`, `pages/games.html`, `pages/photography.html` - category pages with expansion space.
+- `pages/websites.html`, `pages/tools.html`, `pages/illustrations.html`, `pages/games.html`, `pages/editing.html`, `pages/photography.html` - category pages with expansion space.
 - `docs/design-system.md` - source of truth for future UI and styling decisions.
 - `locales/en.json`, `locales/zh.json` - runtime translation dictionaries loaded by `assets/js/site.js`.
 
