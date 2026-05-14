@@ -31,7 +31,7 @@
   --shadow: 0 22px 70px var(--color-shadow);
   --radius: 8px;
   --max: 1180px;
-  --heroPosterImage: url(../img/Toruki_7_003.jpg);
+  /* --heroPosterImage: url(../img/Toruki_7_003.jpg); */
   scrollbar-color: var(--color-primary) transparent;
   scrollbar-width: thin;
 }
@@ -293,6 +293,8 @@ h1, h2, h3, p { margin-top: 0; }
     linear-gradient(135deg, var(--art-a, #b95dff), var(--art-b, #1b0549));
 }
 .work-body { padding: 20px; }
+.work-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.work-actions .ghost-button { min-height: 36px; padding: 9px 13px; font-size: 12px; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
 .tag { padding: 7px 9px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; color: var(--muted); font-size: 12px; font-weight: 800; }
 .category-strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }

@@ -74,6 +74,24 @@ Rules:
 
 ## Components
 
+## Tools Directory Architecture
+
+All browser tools must be fully self-contained inside `tools/[tool-name]/`. A tool folder owns every file required by that tool, including HTML, CSS, JavaScript, JSON data, Markdown documentation, configuration files, local assets, and any tool-specific design references.
+
+Tools must not depend on page-specific files from the portfolio shell for their runtime UI. Shared brand ideas can be referenced in documentation, but the tool implementation itself should remain portable and ready for GitHub Pages hosting from its own directory.
+
+Required baseline structure:
+
+```plaintext
+tools/[tool-name]/
+  index.html
+  style.css
+  app.js
+  data/
+  docs/
+  design.md
+```
+
 ### Buttons
 
 - Primary buttons use `--color-paper` background with `--color-primary-dark` text.

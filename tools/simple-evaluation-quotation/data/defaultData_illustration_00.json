@@ -1,0 +1,234 @@
+{
+  "category": "illustration",
+  "presetName": "Standard Illustration",
+  "title": "Illustration Quotation",
+  "summary": "Estimate art pricing from base category, characters, background, design work, rush timing, licensing, and outputs.",
+  "conditions": [
+    {
+      "id": "base",
+      "kind": "groupedOption",
+      "role": "base",
+      "name": "Base Category",
+      "description": "Choose the main artwork type first, then choose the finish or service level.",
+      "default": { "group": "headshots", "option": "anime" },
+      "weight": 1,
+      "groups": [
+        {
+          "id": "headshots",
+          "label": "Headshots",
+          "options": [
+            { "id": "chibi", "label": "Chibi", "price": 30 },
+            { "id": "flat", "label": "Flat", "price": 60 },
+            { "id": "anime", "label": "Anime", "price": 100 },
+            { "id": "painterly", "label": "Painterly", "price": 180 }
+          ]
+        },
+        {
+          "id": "halfBody",
+          "label": "Half Body",
+          "options": [
+            { "id": "chibi", "label": "Chibi", "price": 50 },
+            { "id": "flat", "label": "Flat", "price": 120 },
+            { "id": "anime", "label": "Anime", "price": 180 },
+            { "id": "painterly", "label": "Painterly", "price": 300 }
+          ]
+        },
+        {
+          "id": "fullBody",
+          "label": "Full Body",
+          "options": [
+            { "id": "chibi", "label": "Chibi", "price": 80 },
+            { "id": "flat", "label": "Flat", "price": 200 },
+            { "id": "anime", "label": "Anime", "price": 350 },
+            { "id": "painterly", "label": "Painterly", "price": 600 }
+          ]
+        },
+        {
+          "id": "wallpaper",
+          "label": "Illustration / Wallpaper",
+          "options": [
+            { "id": "simple", "label": "Simple", "price": 300 },
+            { "id": "character", "label": "Character", "price": 500 },
+            { "id": "complex", "label": "Complex", "price": 800 },
+            { "id": "commercial", "label": "Commercial", "price": 1500 }
+          ]
+        },
+        {
+          "id": "comic",
+          "label": "Comic 4-panel",
+          "options": [
+            { "id": "bw", "label": "B&W", "price": 150 },
+            { "id": "color", "label": "Color", "price": 300 },
+            { "id": "highDetail", "label": "High detail", "price": 600 },
+            { "id": "commercial", "label": "Commercial", "price": 0, "manual": true }
+          ]
+        },
+        {
+          "id": "live2d",
+          "label": "Live2D / VTuber",
+          "options": [
+            { "id": "basic", "label": "Basic", "price": 800 },
+            { "id": "fullRig", "label": "Full rig", "price": 1500 },
+            { "id": "standby", "label": "Standby", "price": 300 },
+            { "id": "overlay", "label": "Stream overlay", "price": 200 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "characters",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Characters",
+      "description": "Extra characters add drawing and composition complexity.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "1", "coefficient": 1 },
+        { "label": "2", "coefficient": 1.7 },
+        { "label": "3", "coefficient": 2.5 },
+        { "label": "4+", "coefficient": 1, "manual": true }
+      ]
+    },
+    {
+      "id": "background",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Background",
+      "description": "Background scope can become a major pricing driver.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "None", "coefficient": 1 },
+        { "label": "Simple", "coefficient": 1.1 },
+        { "label": "Scene", "coefficient": 1.3 },
+        { "label": "Complex", "coefficient": 1.6 },
+        { "label": "Large scene", "coefficient": 2 },
+        { "label": "World scale", "coefficient": 3 }
+      ]
+    },
+    {
+      "id": "artStyle",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Art Style",
+      "description": "Rendering style changes detail and polish requirements.",
+      "default": 1,
+      "weight": 1,
+      "options": [
+        { "label": "Chibi", "coefficient": 0.8 },
+        { "label": "Flat", "coefficient": 1 },
+        { "label": "Anime cel", "coefficient": 1.2 },
+        { "label": "Painterly", "coefficient": 1.5 },
+        { "label": "Realistic", "coefficient": 2 },
+        { "label": "High-end commercial", "coefficient": 3 }
+      ]
+    },
+    {
+      "id": "design",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Design Requirement",
+      "description": "Original design work includes character, clothing, color, and worldbuilding decisions.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "Client provided", "coefficient": 1 },
+        { "label": "Reference provided", "coefficient": 1.1 },
+        { "label": "Assisted design", "coefficient": 1.3 },
+        { "label": "Full original design", "coefficient": 1.8 }
+      ]
+    },
+    {
+      "id": "rush",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Rush",
+      "description": "Urgent delivery increases scheduling pressure.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "Normal", "coefficient": 1 },
+        { "label": "7 days", "coefficient": 1.2 },
+        { "label": "3 days", "coefficient": 1.5 },
+        { "label": "48h", "coefficient": 2 },
+        { "label": "24h", "coefficient": 3 }
+      ]
+    },
+    {
+      "id": "licensing",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Licensing",
+      "description": "Default pricing does not include commercial rights.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "Personal", "coefficient": 1 },
+        { "label": "Social", "coefficient": 1.2 },
+        { "label": "Commercial", "coefficient": 3 },
+        { "label": "Ads", "coefficient": 5 },
+        { "label": "Buyout", "coefficient": 10 }
+      ]
+    },
+    {
+      "id": "expressions",
+      "kind": "number",
+      "role": "extra",
+      "name": "Extra Expressions",
+      "description": "Expression variants add RM15 each by default.",
+      "default": 0,
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "fee": 15,
+      "weight": 1
+    },
+    {
+      "id": "pets",
+      "kind": "number",
+      "role": "extra",
+      "name": "Pets",
+      "description": "Pet additions are modeled as RM60 each for quick estimation.",
+      "default": 0,
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "fee": 60,
+      "weight": 1
+    },
+    {
+      "id": "sourceFile",
+      "kind": "toggle",
+      "role": "extra",
+      "name": "PSD / Clip Studio Source File",
+      "label": "Include source file",
+      "description": "Layered source file export adds a configurable output fee.",
+      "default": false,
+      "fee": 120,
+      "weight": 1
+    },
+    {
+      "id": "fourK",
+      "kind": "toggle",
+      "role": "extra",
+      "name": "4K Output",
+      "label": "Include 4K output",
+      "description": "PNG/JPG is default. 4K output adds RM50.",
+      "default": false,
+      "fee": 50,
+      "weight": 1
+    },
+    {
+      "id": "eightK",
+      "kind": "toggle",
+      "role": "extra",
+      "name": "8K Output",
+      "label": "Include 8K output",
+      "description": "8K output adds RM100.",
+      "default": false,
+      "fee": 100,
+      "weight": 1
+    }
+  ]
+}

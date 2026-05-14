@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Evaluation Quotation Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="tool-header">
+    <a class="tool-brand" href="../../pages/tools.html" aria-label="Back to tools">
+      <span>报价表</span>
+      <strong>Simple Evaluation Quotation</strong>
+    </a>
+    <div class="header-actions">
+      <label class="preset-field">Preset
+        <select data-preset-select aria-label="Preset"></select>
+      </label>
+    </div>
+  </header>
+
+  <main class="tool-shell">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">Pricing estimator</p>
+        <h1 data-title>Choose a quotation type</h1>
+        <p data-summary>Adjust each condition to generate a live estimate.</p>
+      </div>
+      <div class="price-card" data-quote-card>
+        <span>Estimated Quote</span>
+        <strong data-total>RM0</strong>
+        <p data-note>Waiting for selection.</p>
+        <button class="primary-button" type="button" data-export-image>Export PNG</button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <form class="condition-stack" data-condition-stack></form>
+      <aside class="summary-panel">
+        <h2>Quotation Summary</h2>
+        <div class="summary-lines" data-summary-lines></div>
+      </aside>
+    </section>
+  </main>
+
+  <div class="modal" data-type-modal hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="type-title">
+      <p class="eyebrow">Start quote</p>
+      <h2 id="type-title">Select service type</h2>
+      <div class="modal-actions">
+        <button class="primary-button" type="button" data-select-type="videoEditing">Video Editing</button>
+        <button class="primary-button warm" type="button" data-select-type="illustration">Illustration</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

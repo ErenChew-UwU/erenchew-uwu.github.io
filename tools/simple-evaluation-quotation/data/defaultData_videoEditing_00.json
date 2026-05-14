@@ -1,0 +1,177 @@
+{
+  "category": "videoEditing",
+  "presetName": "Standard Video Editing",
+  "title": "Video Editing Quotation",
+  "summary": "Estimate editing cost from duration, material state, production complexity, rights, rush timing, and revisions.",
+  "conditions": [
+    {
+      "id": "duration",
+      "kind": "option",
+      "role": "base",
+      "name": "Duration",
+      "description": "Base price is calculated from final video length. Less than 10s is treated as 10s.",
+      "default": 2,
+      "weight": 1,
+      "options": [
+        { "label": "10s", "price": 30, "description": "Minimum billable duration." },
+        { "label": "30s", "price": 80 },
+        { "label": "1min", "price": 150 },
+        { "label": "1min30s", "price": 220 },
+        { "label": "2min", "price": 300 },
+        { "label": "3min", "price": 450 },
+        { "label": "5min", "price": 700 },
+        { "label": "8min", "price": 1000 },
+        { "label": "10min", "price": 1300 },
+        { "label": ">10min", "price": 0, "manual": true, "description": "Manual negotiation required." }
+      ]
+    },
+    {
+      "id": "material",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Material Organization",
+      "description": "How ready the source files are before editing begins.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "Fully organized", "coefficient": 1 },
+        { "label": "Slightly categorized", "coefficient": 1.1 },
+        { "label": "Single camera messy", "coefficient": 1.3 },
+        { "label": "Multi-camera", "coefficient": 1.5 }
+      ]
+    },
+    {
+      "id": "dataSize",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Data Size",
+      "description": "Larger source folders require more ingest and review time.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "<20GB", "coefficient": 1 },
+        { "label": "<50GB", "coefficient": 1.1 },
+        { "label": "<100GB", "coefficient": 1.3 },
+        { "label": ">100GB", "coefficient": 1.5 }
+      ]
+    },
+    {
+      "id": "script",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Script",
+      "description": "Script clarity affects planning and editing speed.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "Full script", "coefficient": 1 },
+        { "label": "Structured script", "coefficient": 1.2 },
+        { "label": "No script", "coefficient": 1.5 }
+      ]
+    },
+    {
+      "id": "subtitles",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Subtitles",
+      "description": "Subtitle work ranges from none to motion subtitle design.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "None", "coefficient": 1 },
+        { "label": "Provided", "coefficient": 1.1 },
+        { "label": "Auto-correct", "coefficient": 1.2 },
+        { "label": "Bilingual", "coefficient": 1.5 },
+        { "label": "Motion subtitles", "coefficient": 1.8 }
+      ]
+    },
+    {
+      "id": "grading",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Color Grading",
+      "description": "Color effort changes from basic correction to cinematic treatment.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "No grading", "coefficient": 1 },
+        { "label": "Basic correction", "coefficient": 1.2 },
+        { "label": "Stylized", "coefficient": 1.5 },
+        { "label": "Cinematic", "coefficient": 2 }
+      ]
+    },
+    {
+      "id": "vfx",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "VFX",
+      "description": "Visual effects range from simple transitions to complex 3D.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "None", "coefficient": 1 },
+        { "label": "Simple transitions", "coefficient": 1.2 },
+        { "label": "Motion graphics", "coefficient": 1.5 },
+        { "label": "MG animation", "coefficient": 2 },
+        { "label": "3D complex", "coefficient": 3 }
+      ]
+    },
+    {
+      "id": "rush",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Rush Orders",
+      "description": "Shorter delivery windows increase production pressure.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "Normal", "coefficient": 1 },
+        { "label": "3 days", "coefficient": 1.2 },
+        { "label": "2 days", "coefficient": 1.5 },
+        { "label": "Same day", "coefficient": 2 }
+      ]
+    },
+    {
+      "id": "usage",
+      "kind": "option",
+      "role": "multiplier",
+      "name": "Usage Type",
+      "description": "Commercial usage increases licensing value.",
+      "default": 0,
+      "weight": 1,
+      "options": [
+        { "label": "Personal", "coefficient": 1 },
+        { "label": "Social/creator", "coefficient": 1.2 },
+        { "label": "Corporate", "coefficient": 1.5 },
+        { "label": "Commercial ads low", "coefficient": 2 },
+        { "label": "Commercial ads high", "coefficient": 5 }
+      ]
+    },
+    {
+      "id": "mediumRevisions",
+      "kind": "number",
+      "role": "extra",
+      "name": "Medium Revisions After Free Rounds",
+      "description": "The first 2 revisions are free. Medium revisions after that add RM50 each.",
+      "default": 0,
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "fee": 50,
+      "weight": 1
+    },
+    {
+      "id": "smallRevisions",
+      "kind": "number",
+      "role": "extra",
+      "name": "Small Revisions After Free Rounds",
+      "description": "Small extra revisions add RM20 each.",
+      "default": 0,
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "fee": 20,
+      "weight": 1
+    }
+  ]
+}
